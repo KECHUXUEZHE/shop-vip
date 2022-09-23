@@ -18,6 +18,9 @@
         <el-form-item label="地址" prop="address">
           <el-input v-model="form.address"></el-input>
         </el-form-item>
+        <el-form-item label="储蓄" prop="money">
+          <el-input v-model="form.money"></el-input>
+        </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
         <el-button @click="dialogVisible = false">取 消</el-button>
@@ -71,6 +74,11 @@
       >
       </el-table-column>
       <el-table-column
+        prop="money"
+        label="储蓄金额"
+      >
+      </el-table-column>
+      <el-table-column
         label="操作">
         <template v-slot="scope">
           <el-button @click="edit(scope.row)" icon="el-icon-edit" type="success">修改</el-button>
@@ -113,9 +121,9 @@ export default {
       rules: {
         id_card: { required: true, message: '请输入卡号' },
         name: { required: true, message: '请输入姓名' },
-        address: { required: true, message: '请输入分数' },
-        major_id: { required: true, message: '请选择专业' },
-        phone: { required: true, message: '请选择课程' }
+        address: { required: true, message: '请输入地址' },
+        money: { required: true, message: '请输入储蓄金额' },
+        phone: { required: true, message: '请输入手机号' }
       },
       stus: [],
       options: [],
@@ -213,7 +221,8 @@ export default {
         'major_name',
         'phone',
         'course_name',
-        'address'
+        'address',
+        'money'
       ])
     },
     submit () {

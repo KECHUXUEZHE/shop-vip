@@ -102,11 +102,11 @@ export function delData (ids, key) {
 }
 
 var stusTab = [
-  { id: 1, id_card: 101, name: '张三', phone: 13755813395, address: '东华理工' },
-  { id: 2, id_card: 102, name: '李四', phone: 13755813395, address: '华东交大' },
-  { id: 3, id_card: 103, name: '王五', phone: 13755813395, address: '江西农大' },
-  { id: 4, id_card: 104, name: '小张', phone: 13755813395, address: '南昌航空' },
-  { id: 5, id_card: 105, name: '小强', phone: 13755813395, address: '南昌大学' }
+  { id: 1, id_card: 101, name: '张三', phone: 13755813395, address: '东华理工', money: 1085 },
+  { id: 2, id_card: 102, name: '李四', phone: 13755813395, address: '华东交大', money: 336 },
+  { id: 3, id_card: 103, name: '王五', phone: 13755813395, address: '江西农大', money: 0 },
+  { id: 4, id_card: 104, name: '小张', phone: 13755813395, address: '南昌航空', money: 111 },
+  { id: 5, id_card: 105, name: '小强', phone: 13755813395, address: '南昌大学', money: 200 }
 ]
 
 export function createTab (obj, key) {
