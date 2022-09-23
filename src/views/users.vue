@@ -43,11 +43,6 @@
           suffix-icon="el-icon-search"
           clearable>
         </el-input>
-        <!-- <el-button v-show="ids.length===0?false:true"
-        type="danger" @click="del(ids)"
-        >
-        批量删除
-        </el-button> -->
       </div>
         <el-button type="primary" @click="add" icon="el-icon-circle-plus-outline" style="margin-top: 0;">新增</el-button>
     </div>
@@ -57,8 +52,6 @@
       @selection-change="handleSelectionChange"
       stripe
       >
-      <!-- <el-table-column type="selection" width="50">
-      </el-table-column> -->
       <el-table-column
         prop="avatar"
         label="头像"
@@ -164,18 +157,9 @@ export default {
       this.ids = val.map(item => {
         return item.id
       })
-      // console.log(this.ids)
     },
-    // tableRowClassName({row, rowIndex}) {
-    //     if (rowIndex === 1) {
-    //       return 'warning-row';
-    //     } else if (rowIndex === 3) {
-    //       return 'success-row';
-    //     }
-    //     return '';
-    //   },
+
     del (ids) {
-      // console.log(ids)
       this.$confirm('您确定要删除所选数据吗', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
