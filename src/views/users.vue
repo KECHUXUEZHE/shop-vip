@@ -26,10 +26,10 @@
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible = false">取 消</el-button>
         <el-button type="primary" @click="submit">
           确 定
         </el-button>
+        <el-button @click="dialogVisible = false">取 消</el-button>
       </span>
     </el-dialog>
     <div class="header">
@@ -239,7 +239,6 @@ export default {
 <style scoped>
 .el-input{
   width: 200px;
-  margin-left: 1050px;
 }
 .header{
   margin-bottom: 20px;

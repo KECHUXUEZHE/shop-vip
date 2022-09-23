@@ -4,11 +4,13 @@ import Login from '@/views/login.vue'
 import Home from '@/views/home.vue'
 import User from '@/views/users.vue'
 import Address from '@/views/viplist.vue'
+import Register from '@/views/register.vue'
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/', redirect: '/login' },
   { path: '/login', component: Login },
+  { path: '/register', component: Register },
   {
     path: '/home',
     component: Home,

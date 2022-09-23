@@ -15,7 +15,7 @@
         <el-button type="primary" @click="submitForm('form')">
           登录
         </el-button>
-        <el-button type="danger">注册</el-button>
+        <el-button type="danger" @click="turn">注册</el-button>
       </div>
     </el-form>
   </div>
@@ -63,6 +63,9 @@ export default {
           return false
         }
       })
+    },
+    turn () {
+      this.$router.push('/register')
     }
   }
 }
