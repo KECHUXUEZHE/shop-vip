@@ -22,7 +22,7 @@ a{
   color: inherit;
 }
 #app{
-  background-color: #f0f0f0;
+  background: linear-gradient(to bottom, #f4d6d6 50%, #0cc6f0 100%);
   width: 100vw;
   height: 100vh;
 }

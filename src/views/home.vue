@@ -2,7 +2,7 @@
   <div class="home">
     <Aside width="230" logo="超市会员管理系统" >
       <router-link to="/home/user"><i class="el-icon-user"></i>用户管理</router-link>
-      <router-link to="/home/score"><i class="el-icon-document"></i>会员管理</router-link>
+      <router-link to="/home/address"><i class="el-icon-document"></i>会员管理</router-link>
     </Aside>
     <div class="container">
       <!-- 头部栏 -->
@@ -65,7 +65,7 @@ export default {
 <style scoped>
 .main{
   flex-grow: 1;
-  padding: 20px;
+  background: #fff;
 }
 .active_link{
   background-color: rgba(94, 83, 83, 0.2);
@@ -91,7 +91,7 @@ export default {
   height: 60px;
   display: flex;
   justify-content: flex-end;
-  background-color: white;
+  background: linear-gradient(to right, rgb(132, 167, 212) 40% ,#ccc 100%);
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, .3);
 }
 [class^="el-icon"]{

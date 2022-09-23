@@ -18,13 +18,13 @@ export default {
   padding: 0 20px;
   height: 60px;
   width: 100%;
-  font-size: 22px;
+  font-size: 23px;
   font-weight: bold;
 }
 .aside{
   display: flex;
   height: 100vh;
-  background-color: #5a5653;
+  background: linear-gradient(to bottom,rgb(132, 167, 212) 40% ,#ccc 100%) ;
   flex-direction: column;
   font-size: 17px;
 }

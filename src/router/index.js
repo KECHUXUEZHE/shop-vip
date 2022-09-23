@@ -3,7 +3,7 @@ import VueRouter from 'vue-router'
 import Login from '@/views/login.vue'
 import Home from '@/views/home.vue'
 import User from '@/views/users.vue'
-import Score from '@/views/viplist.vue'
+import Address from '@/views/viplist.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -21,8 +21,8 @@ const routes = [
         meta: { requiredAuth: true }
       },
       {
-        path: 'score',
-        component: Score,
+        path: 'address',
+        component: Address,
         meta: { requiredAuth: true }
       }
     ]

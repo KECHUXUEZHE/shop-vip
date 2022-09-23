@@ -108,63 +108,63 @@ export function delData (ids, key) {
 //   { id: 5, stu_id: 105, name: '小强', major_id: 1905, major_name: '土木工程', course_id: 5, course_name: '工程力学', score: 77 }
 // ]
 var stusTab = [
-  { id: 1, stu_id: 101, name: '张三', course_id: 13755813395, score: '东华理工' },
-  { id: 2, stu_id: 102, name: '李四', course_id: 13755813395, score: '华东交大' },
-  { id: 3, stu_id: 103, name: '王五', course_id: 13755813395, score: '江西农大' },
-  { id: 4, stu_id: 104, name: '小张', course_id: 13755813395, score: '南昌航空' },
-  { id: 5, stu_id: 105, name: '小强', course_id: 13755813395, score: '南昌大学' }
+  { id: 1, id_card: 101, name: '张三', phone: 13755813395, address: '东华理工' },
+  { id: 2, id_card: 102, name: '李四', phone: 13755813395, address: '华东交大' },
+  { id: 3, id_card: 103, name: '王五', phone: 13755813395, address: '江西农大' },
+  { id: 4, id_card: 104, name: '小张', phone: 13755813395, address: '南昌航空' },
+  { id: 5, id_card: 105, name: '小强', phone: 13755813395, address: '南昌大学' }
 ]
-var courseTree = [
-  {
-    major_id: 1901,
-    major_name: '软件工程',
-    children: [
-      { course_id: 1, name: '高等数学' },
-      { course_id: 4, name: '计算机组成原理' },
-      { course_id: 3, name: 'Vue框架' }
-    ]
-  },
-  {
-    major_id: 1902,
-    major_name: '计算机科学与技术',
-    children: [
-      { course_id: 1, name: '高等数学' },
-      { course_id: 2, name: '大学英语' },
-      { course_id: 4, name: '计算机组成原理' }
-    ]
-  },
-  {
-    major_id: 1903,
-    major_name: '网络工程',
-    children: [
-      { course_id: 1, name: '高等数学' },
-      { course_id: 4, name: '计算机组成原理' },
-      { course_id: 6, name: '计算机网络' }
-    ]
-  },
-  {
-    major_id: 1904,
-    major_name: '物联网工程',
-    children: [
-      { course_id: 1, name: '高等数学' },
-      { course_id: 4, name: '计算机组成原理' },
-      { course_id: 7, name: '物联网导论' }
-    ]
-  },
-  {
-    major_id: 1905,
-    major_name: '土木工程',
-    children: [
-      { course_id: 1, name: '高等数学' },
-      { course_id: 4, name: '计算机组成原理' },
-      { course_id: 5, name: '工程力学' }
-    ]
-  }
-]
+// var courseTree = [
+//   {
+//     major_id: 1901,
+//     major_name: '软件工程',
+//     children: [
+//       { course_id: 1, name: '高等数学' },
+//       { course_id: 4, name: '计算机组成原理' },
+//       { course_id: 3, name: 'Vue框架' }
+//     ]
+//   },
+//   {
+//     major_id: 1902,
+//     major_name: '计算机科学与技术',
+//     children: [
+//       { course_id: 1, name: '高等数学' },
+//       { course_id: 2, name: '大学英语' },
+//       { course_id: 4, name: '计算机组成原理' }
+//     ]
+//   },
+//   {
+//     major_id: 1903,
+//     major_name: '网络工程',
+//     children: [
+//       { course_id: 1, name: '高等数学' },
+//       { course_id: 4, name: '计算机组成原理' },
+//       { course_id: 6, name: '计算机网络' }
+//     ]
+//   },
+//   {
+//     major_id: 1904,
+//     major_name: '物联网工程',
+//     children: [
+//       { course_id: 1, name: '高等数学' },
+//       { course_id: 4, name: '计算机组成原理' },
+//       { course_id: 7, name: '物联网导论' }
+//     ]
+//   },
+//   {
+//     major_id: 1905,
+//     major_name: '土木工程',
+//     children: [
+//       { course_id: 1, name: '高等数学' },
+//       { course_id: 4, name: '计算机组成原理' },
+//       { course_id: 5, name: '工程力学' }
+//     ]
+//   }
+// ]
 export function createTab (obj, key) {
   const data = obj
   const tab = localStorage.getItem(key)
   tab || localStorage.setItem(key, JSON.stringify(data))
 }
 createTab(stusTab, 'stuTab')
-createTab(courseTree, 'courseTree')
+// createTab(courseTree, 'courseTree')

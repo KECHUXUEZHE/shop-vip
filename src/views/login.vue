@@ -1,11 +1,13 @@
 <template>
   <div class="login">
-    <h1>用户登录</h1>
+    <div class="h1">用户登录</div>
     <el-form :model="form" :rules="rules" ref="form">
-      <el-form-item label="账号" prop="username">
+      <el-form-item prop="username">
+        <label class="title">账号 </label>
         <el-input v-model.trim="form.username"></el-input>
       </el-form-item>
-      <el-form-item  label="密码" prop="password">
+      <el-form-item   prop="password">
+        <label class="title">密码</label>
         <el-input type="password" v-model.trim="form.password">
         </el-input>
       </el-form-item>
@@ -75,9 +77,27 @@ export default {
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
-  background-color: white;
+  background: linear-gradient(to bottom, #fff0f0 50%, #8ee1f8 100%);
+  /* color: white; */
+}
+.h1{
+  display: inline-block;
+  font-weight: 700;color: transparent;
+  -webkit-background-clip: text!important;
+  font-size: 20px;
+  background: linear-gradient(to right, #919da0 30%, #23c3ef 100%);
+}
+.title {
+  display: inline-block;
+  font-weight: 700;color: transparent;
+  -webkit-background-clip: text!important;
+  font-size: 15px;
+  background: linear-gradient(to right, #919da0 30%, #23c3ef 100%);
 }
 .btn{
   text-align: center;
+}
+label {
+  color: white;
 }
 </style>

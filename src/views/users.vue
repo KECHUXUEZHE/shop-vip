@@ -49,7 +49,7 @@
         批量删除
         </el-button> -->
       </div>
-        <el-button type="danger" @click="add" icon="el-icon-circle-plus-outline">新增</el-button>
+        <el-button type="primary" @click="add" icon="el-icon-circle-plus-outline" style="margin-top: 0;">新增</el-button>
     </div>
      <el-table
       :data="pageData"
@@ -96,7 +96,7 @@
       <el-table-column
         label="操作">
         <template v-slot="scope">
-          <el-button @click="edit(scope.row)" icon="el-icon-edit">修改</el-button>
+          <el-button @click="edit(scope.row)" icon="el-icon-edit" type="success">修改</el-button>
           <el-button type="danger" @click="del([scope.row.id])" icon="el-icon-remove-outline">删除</el-button>
         </template>
       </el-table-column>
@@ -255,21 +255,28 @@ export default {
 <style scoped>
 .el-input{
   width: 200px;
-  margin-left: 35px;
+  margin-left: 1050px;
 }
 .header{
   margin-bottom: 20px;
 }
 .search{
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
 }
 .user{
   padding: 20px;
   background-color: white;
 }
+h2 {
+  display: inline-block;
+  font-weight: 700;color: transparent;
+  -webkit-background-clip: text!important;
+  font-size: 40px;
+  background: linear-gradient(to left, rgb(132, 167, 212) 40% ,#ccc 100%);
+}
 .el-button{
-  margin: 10px;
+  margin: 10px 10px 10px 10px ;
 }
 .el-form-item{
   display: flex;
@@ -285,4 +292,8 @@ export default {
   .el-table .success-row {
     background: #f0f9eb;
   }
+.el-pagination {
+  margin-top: 10px;
+  margin-left: 1100px;
+}
 </style>

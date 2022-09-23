@@ -6,37 +6,17 @@
       width="350px"
       >
       <el-form :model="form" ref="form" :rules="rules">
-        <el-form-item label="卡号" prop="stu_id">
-          <el-input v-model="form.stu_id"></el-input>
+        <el-form-item label="卡号" prop="id_card">
+          <el-input v-model="form.id_card"></el-input>
         </el-form-item>
         <el-form-item label="姓名" prop="name">
           <el-input v-model="form.name"></el-input>
         </el-form-item>
-          <!-- <el-form-item label="专业" prop="major_id">
-           <el-select ref="majorOption"  size="mini" v-model="form.major_id" placeholder="请选择专业"  @change="setMajor">
-                <el-option
-                  v-for="item in options"
-                  :key="item.value"
-                  :label="item.label"
-                  :value="item.value">
-                </el-option>
-            </el-select>
-        </el-form-item> -->
-        <el-form-item label="手机号" prop="course_id">
-          <el-input v-model="form.course_id"></el-input>
-            <!-- <el-select ref="courseOption"  size="mini"
-            v-model="form.course_id" placeholder="请选择专业"
-            @change="setCourse">
-                <el-option
-                  v-for="item in form_course"
-                  :key="item.value"
-                  :label="item.label"
-                  :value="item.value">
-                </el-option>
-            </el-select> -->
+        <el-form-item label="手机号" prop="phone">
+          <el-input v-model="form.phone"></el-input>
         </el-form-item>
-        <el-form-item label="地址" prop="score">
-          <el-input v-model="form.score"></el-input>
+        <el-form-item label="地址" prop="address">
+          <el-input v-model="form.address"></el-input>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
@@ -57,33 +37,8 @@
           suffix-icon="el-icon-search"
           clearable>
         </el-input>
-        <!-- <el-select v-model="condition.majorId" clearable
-        placeholder="请选择专业"
-        @change="getCourse"
-        > -->
-          <!-- <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value">
-          </el-option>
-        </el-select> -->
-        <!-- <el-select v-model="condition.courseId" clearable
-        placeholder="请选择课程">
-          <el-option
-            v-for="item in course"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value">
-          </el-option>
-        </el-select> -->
-        <!-- <el-button v-show="ids.length===0?false:true"
-        type="danger" @click="del(ids)"
-        >
-        批量删除
-        </el-button> -->
       </div>
-        <el-button type="danger" @click="add" icon="el-icon-circle-plus-outline">新增</el-button>
+      <el-button type="primary" @click="add" icon="el-icon-circle-plus-outline" style="margin-top: 0;">新增</el-button>
     </div>
      <el-table
       style="width: 100%"
@@ -91,11 +46,9 @@
       @selection-change="handleSelectionChange"
       stripe
       >
-      <!-- <el-table-column type="selection" width="50">
-      </el-table-column> -->
       <el-table-column
         sortable
-        prop="stu_id"
+        prop="id_card"
         label="卡号"
         width="100">
       </el-table-column>
@@ -104,26 +57,23 @@
         prop="name"
         label="姓名">
       </el-table-column>
-      <!-- <el-table-column prop="major_name" label="专业">
-      </el-table-column> -->
-
       <el-table-column
-        prop="course_id"
+        prop="phone"
         label="手机号">
         <template slot-scope="scope">
         <i class="el-icon-phone"></i>
-        <span style="margin-right: 10px">{{ scope.row.course_id }}</span>
+        <span style="margin-right: 10px">{{ scope.row.phone }}</span>
       </template>
       </el-table-column>
       <el-table-column
-        prop="score"
+        prop="address"
         label="地址"
       >
       </el-table-column>
       <el-table-column
         label="操作">
         <template v-slot="scope">
-          <el-button @click="edit(scope.row)" icon="el-icon-edit">修改</el-button>
+          <el-button @click="edit(scope.row)" icon="el-icon-edit" type="success">修改</el-button>
           <el-button type="danger" @click="del([scope.row.id])" icon="el-icon-remove-outline">
             删除
           </el-button>
@@ -161,11 +111,11 @@ export default {
       form: {},
       // 配置表单验证规则
       rules: {
-        stu_id: { required: true, message: '请输入卡号' },
+        id_card: { required: true, message: '请输入卡号' },
         name: { required: true, message: '请输入姓名' },
-        score: { required: true, message: '请输入分数' },
+        address: { required: true, message: '请输入分数' },
         major_id: { required: true, message: '请选择专业' },
-        course_id: { required: true, message: '请选择课程' }
+        phone: { required: true, message: '请选择课程' }
       },
       stus: [],
       options: [],
@@ -188,7 +138,7 @@ export default {
       console.log(this.form_course)
       this.form_course =
         this.form_course ? this.form_course.children : []
-      if (!this.first) delete this.form.course_id
+      if (!this.first) delete this.form.phone
       this.first = false
     }
   },
@@ -199,11 +149,11 @@ export default {
     searchData () {
       const { keywords, courseId, majorId } = this.condition
       return this.stus.filter((item) => {
-        return (keywords ? ([item.stu_id, item.name].some((i) => {
+        return (keywords ? ([item.id_card, item.name].some((i) => {
           return ('' + i).includes(keywords)
         })) : true) &&
         (majorId ? item.major_id === majorId : true) &&
-        (courseId ? item.course_id === courseId : true)
+        (courseId ? item.phone === courseId : true)
       })
     },
     pageData () {
@@ -224,7 +174,7 @@ export default {
       })
     },
     setCourse (val) {
-      this.$set(this.form, 'course_id', val)
+      this.$set(this.form, 'phone', val)
       this.$nextTick(() => {
         this.$set(this.form, 'course_name',
           this.$refs.courseOption.selectedLabel)
@@ -256,14 +206,14 @@ export default {
       this.action = 'edit'
       this.first = true
       this.form = pick(row, [
-        'stu_id',
+        'id_card',
         'id',
         'name',
         'major_id',
         'major_name',
-        'course_id',
+        'phone',
         'course_name',
-        'score'
+        'address'
       ])
     },
     submit () {
@@ -346,7 +296,14 @@ export default {
 }
 .search{
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
+}
+h2 {
+  display: inline-block;
+  font-weight: 700;color: transparent;
+  -webkit-background-clip: text!important;
+  font-size: 40px;
+  background: linear-gradient(to left, rgb(132, 167, 212) 40% ,#ccc 100%);
 }
 .user{
   padding: 20px;
@@ -362,5 +319,8 @@ export default {
 .el-form-item__label{
   margin-right: 20px;
 }
-
+.el-pagination {
+  margin-top: 10px;
+  margin-left: 1100px;
+}
 </style>
