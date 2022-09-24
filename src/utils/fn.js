@@ -1,39 +1,39 @@
 export default function createUsers () {
   var users = [
     {
-      username: 'admin',
-      nickname: 'Charlie',
+      username: 'username1',
+      nickname: 'KeyNG',
       password: '123456',
       avatar: 'https://img1.baidu.com/it/u=2340445378,3135783876&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
       id: 1,
-      phone: 13755813395,
+      phone: 13846952239,
       createDate: Date.now()
     },
     {
-      username: 'admin2',
-      nickname: 'Tony',
-      password: '000000',
+      username: 'username2',
+      nickname: 'Ice_paper',
+      password: '88888888',
       avatar: 'https://img2.baidu.com/it/u=3062813899,1142128231&fm=253&fmt=auto&app=138&f=JPEG?w=479&h=500',
       id: 2,
-      phone: 13788554665,
+      phone: 15070907757,
       createDate: Date.now()
     },
     {
-      username: 'admin3',
-      nickname: 'Jack',
+      username: 'username3',
+      nickname: 'GAI',
       password: '666666',
       avatar: 'https://img2.baidu.com/it/u=1249099614,3534836312&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=448',
       id: 3,
-      phone: 15922247896,
+      phone: 18296958854,
       createDate: Date.now()
     },
     {
-      username: 'admin4',
-      nickname: 'Bob',
-      password: '123456',
+      username: 'username4',
+      nickname: 'Round_two',
+      password: '555555',
       avatar: 'https://img0.baidu.com/it/u=2029936336,3680262465&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=500',
       id: 4,
-      phone: 10044668224,
+      phone: 13420343445,
       createDate: Date.now()
     }
   ]
